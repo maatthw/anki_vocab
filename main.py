@@ -45,4 +45,6 @@ def main(n=1):
         word = get_random_word(UNSEEN_WORDS_PATH)
         generate_card(word)
 
-main(n=3)
+if __name__ == "__main__":
+    n = int(input("How many cards?: "))
+    main(n)
