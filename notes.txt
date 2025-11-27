@@ -3,3 +3,12 @@
 2) Query a GPT model to obtain english translation(s), part of speech, and 1 sentence with its english translation as well
 3) Create an Anki card with the data
 4) Upload the Anki card to the relevant deck
+
+
+git add . OR git add file.py (all vs specific)(stage the changes, aka get them ready to be published)
+git commit -m "message"
+git push
+
+
+Ideas
+1. 

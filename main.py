@@ -46,5 +46,6 @@ def main(n=1):
         generate_card(word)
 
 if __name__ == "__main__":
-    n = int(input("How many cards would you like to make?: "))
+    n = int(input("How many words would you like to do?: "))
     main(n)
+
