@@ -3,15 +3,17 @@ import requests
 
 ANKI_CONNECT_URL = "http://localhost:8765"
 
-def invoke(action, params=None):
+def invoke(action, params=None, word=None):
     payload = {
         "action": action,
         "version": 6,
         "params": params or {}
     }
     resp = requests.post(ANKI_CONNECT_URL, json=payload)
-    print("Status code:", resp.status_code)
-    print("Raw response:", resp.text)
+    status_code = resp.status_code
+    if status_code == 200:
+        print(f"Successfully created card for word {word}.")
+
     return resp.json()
 
 def create_note(front, back, sentence, sentence_english, pos, important_info):
@@ -33,4 +35,4 @@ def create_note(front, back, sentence, sentence_english, pos, important_info):
         "tags": []
     }
 
-    return invoke("addNote", {"note": note})
+    return invoke("addNote", {"note": note}, word=front)
